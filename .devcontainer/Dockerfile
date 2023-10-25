@@ -1,5 +1,5 @@
 # Utiliser une image de base Ubuntu
-FROM mcr.microsoft.com/devcontainers/python:1-3.11-bullseye
+FROM mcr.microsoft.com/devcontainers/python:3.8
 
 # Définir les métadonnées de l'image
 LABEL org.opencontainers.image.source https://github.com/tiamat-azure/kubernetes-devops-project
@@ -19,6 +19,13 @@ RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.oh-m
 RUN apt-get update && \
     apt-get install -y httpie dnsutils figlet && \
     apt-get clean
+
+# Installer les packages Python
+COPY requirements.txt /tmp/pip-tmp/
+
+RUN pip3 --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
+    && rm -rf /tmp/pip-tmp
+
 
 # Exécuter un shell Zsh au démarrage
 ENTRYPOINT ["/bin/zsh"]

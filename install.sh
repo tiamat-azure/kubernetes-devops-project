@@ -23,4 +23,5 @@ uname -a
 show_version "python3" "--version"
 
 # Installer les dependances python
-pip3 install --user -r requirements.txt
+# Fait dans le dev container
+# pip3 install --user -r requirements.txt
