@@ -1,0 +1,32 @@
+name: 'Deploy devcontainer to GHCR'
+
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: ' Git Checkout'
+        uses: actions/checkout@v3
+
+      - name: 'Login to GHCR'
+        uses: docker/login-action@v2 
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Dev Container image
+        uses: devcontainers/ci@v0.3
+        with:
+          # Change this to point to your image name
+          imageName: ghcr.io/tiamat-azure/devcontainer-python3.11
+          # Change this to be your CI task/script
+          runCmd: |
+            # Add multiple commands to run if needed
+            echo "Build finished!"
