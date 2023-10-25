@@ -135,4 +135,3 @@ docker pull ghcr.io/tiamat-azure/fast-api:latest
 # Vérifier l'image
 docker image ls
 ```
-
