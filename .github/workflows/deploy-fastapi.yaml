@@ -1,4 +1,4 @@
-name: Deploy Images to GHCR
+name: Deploy FastAPI to GHCR
 
 on:
   push:
@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: 'Git Checkout'
         uses: actions/checkout@v3

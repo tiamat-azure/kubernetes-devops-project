@@ -9,6 +9,9 @@ on: # rebuild any PRs and main branch changes
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write  # for publishing to GHCR
     steps:
 
       - name: ' Git Checkout'
