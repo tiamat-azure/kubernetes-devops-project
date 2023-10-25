@@ -8,9 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+    permissions: write-all
+      # contents: read
+      # packages: write
     steps:
       - name: 'Git Checkout'
         uses: actions/checkout@v3
