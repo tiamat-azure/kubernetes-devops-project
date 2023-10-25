@@ -4,7 +4,10 @@
 	"name": "Python 3.11",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
-	"build": { "dockerfile": "Dockerfile" },
+	"build": { 
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
 
 	"customizations": {
 		"vscode": {
@@ -26,8 +29,6 @@
 	"features": {
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
 	},
-
-	"context": "..",
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
