@@ -28,5 +28,4 @@ jobs:
 
       - name: 'Build and push FastApi Image'
         run: |
-          docker build . -t ${{env.GHCR}}/${{github.actor}}/fast-api:latest
-          docker push ${{env.GHCR}}/${{github.actor}}/fast-api:latest
+          docker buildx build --push -t ${{env.GHCR}}/${{github.actor}}/fast-api:latest .
