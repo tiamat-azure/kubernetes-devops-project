@@ -27,6 +27,8 @@
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
 	},
 
+	"context": "..",
+
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
