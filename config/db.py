@@ -3,11 +3,11 @@ from sqlalchemy import create_engine, MetaData
 
 
 # Récupérer les valeurs via les variables d'environnement
-db_user = os.getenv("DB_USER")
-db_password = os.getenv("DB_PWD")
-db_host = os.getenv("DB_HOST")
-db_port = os.getenv("DB_PORT")
-db_name = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_PWD = os.getenv("DB_PWD")
+DB_HOST = os.getenv("DB_HOST")
+DB_PORT = os.getenv("DB_PORT")
+DB_NAME = os.getenv("DB_NAME")
 
 # Créez la chaîne de connexion en utilisant les variables
 db_connection_string = f"postgresql://{DB_USER}:{DB_PWD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
