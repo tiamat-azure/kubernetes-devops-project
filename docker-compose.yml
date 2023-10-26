@@ -30,6 +30,12 @@ services:
 
   fastapi:
     restart: always
+    environment:
+      - DB_USER=admin
+      - DB_PWD=password
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=storedb
     build:
       context: ./
       dockerfile: Dockerfile
