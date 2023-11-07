@@ -23,5 +23,5 @@ uname -a
 show_version "python3" "--version"
 
 # Installer les dependances python
-# Fait dans le dev container
+# Fait dans le container de FastAPI
 # pip3 install --user -r requirements.txt
